@@ -1,0 +1,19 @@
+{
+  "name": "we-send.cz",
+  "version": "1.0.0",
+  "description": "Web we-send.cz",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brocklj/we-send-WP-template.git"
+  },
+  "author": "Jakub Brockl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brocklj/we-send-WP-template/issues"
+  },
+  "homepage": "https://github.com/brocklj/we-send-WP-template#readme"
+}
