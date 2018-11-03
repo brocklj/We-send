@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/brocklj/we-send-WP-template/issues"
   },
-  "homepage": "https://github.com/brocklj/we-send-WP-template#readme"
+  "homepage": "https://github.com/brocklj/we-send-WP-template#readme",
+  "dependencies": {
+    "sass": "^1.14.3"
+  }
 }
