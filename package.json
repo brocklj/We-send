@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --watch",
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server --open",
+    "server": "node server.js",
     "build": "webpack"
   },
   "repository": {
@@ -29,8 +31,12 @@
   },
   "devDependencies": {
     "awesome-typescript-loader": "^5.2.1",
+    "express": "^4.16.4",
+    "html-webpack-plugin": "^3.2.0",
     "source-map-loader": "^0.2.4",
     "typescript": "^3.1.6",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-middleware": "^3.4.0",
+    "webpack-dev-server": "^3.1.10"
   }
 }
