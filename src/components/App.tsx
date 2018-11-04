@@ -10,9 +10,6 @@ export interface IAppProps { compiler: string; framework: string; }
 
 export const App = (props: IAppProps) => (
     <div>
-        <Row className="nav-bar">
-            <NavBar />
-        </Row>
         <Row id="content">
             <AppContent />
         </Row>

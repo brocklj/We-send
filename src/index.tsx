@@ -4,7 +4,11 @@ import * as ReactDOM from "react-dom";
 
 import { App } from "./components/App";
 
+const Root = () => (
+    <App compiler="TypeScript" framework="React" />
+);
+
 ReactDOM.render(
-    <App compiler="TypeScript" framework="React" />,
+    <Root />,
     document.getElementById("app"),
 );
