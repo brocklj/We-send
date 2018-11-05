@@ -1,2 +1,2 @@
 # We-send
-Wordpress template using Bootstrap and Sass http://we-send.cz
+Fast Wordpress SPA template using React http://we-send.cz
