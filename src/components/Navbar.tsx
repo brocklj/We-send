@@ -14,21 +14,24 @@ export class NavBar extends React.PureComponent {
 
                  `}
                 </style>
-                <Navbar>
+                <Navbar collapseOnSelect>
                     <Navbar.Header>
                         <Navbar.Brand>
                             <a href="#home">We-Send</a>
                         </Navbar.Brand>
+                        <Navbar.Toggle />
                     </Navbar.Header>
-                    <Nav pullRight>
-                        {settings.mainNav.map(({ label, path }, i) => (
-                            <li>
-                                <Link to={path}>
-                                    {label}
-                                </Link>
-                            </li>
-                        ))}
-                    </Nav>
+                    <Navbar.Collapse>
+                        <Nav pullRight>
+                            {settings.mainNav.map(({ label, path }, i) => (
+                                <li>
+                                    <Link to={path}>
+                                        {label}
+                                    </Link>
+                                </li>
+                            ))}
+                        </Nav>
+                    </Navbar.Collapse>
                 </Navbar>
             </div>
         );
