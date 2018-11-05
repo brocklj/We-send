@@ -9,13 +9,8 @@ import { NavBar } from "./Navbar";
 export interface IAppProps { compiler: string; framework: string; }
 
 export const App = (props: IAppProps) => (
-    <div>
-        <Row id="content">
-            <AppContent />
-        </Row>
-        <Row id="footer">
-            <AppFooter />
-        </Row>
-    </div>
+
+    <AppContent />
+
 
 );
