@@ -35,7 +35,7 @@ module.exports = {
     ],
     output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, '')
     },
     // When importing a module whose path matches one of the following, just
     // assume a corresponding global variable exists and use that instead.
