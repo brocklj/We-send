@@ -9,17 +9,16 @@ import { PostContent } from "./PostContent";
 export class AppContent extends React.PureComponent {
 
     public render() {
-        const componentMap = {
+        const componentMap: any = {
             HomeContent,
             PostContent,
         };
-        // @ts-ignore
         return (
             <BrowserRouter>
                 <Switch>
-                    {settings.mainNav.map((navItem: { component: string, path: string }) =>
-                        (                                                    // @ts-ignore
-                            <Route exact path={navItem.path} component={componentMap[navItem.component]} />
+                    {settings.mainNav.map(({ component, path }: { component: string, path: string }, i: number) =>
+                        (
+                            <Route exact path={path} key={i} component={componentMap[component]} />
                         ),
                     )}
                 </Switch>
