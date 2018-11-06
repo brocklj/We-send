@@ -33,6 +33,11 @@ Text Domain: we-send
 </head>
 
 <body>
+  <script>
+    var appSettings = {
+      path: '<?php echo esc_url( get_home_url() ); ?>'
+    };
+  </script>
 
   <div id="app" class="container"></div>
   <script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/main.bundle.js"></script>

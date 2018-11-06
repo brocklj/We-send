@@ -6,6 +6,8 @@ import settings from "./AppSettings";
 import { HomeContent } from "./HomeContent";
 import { PostContent } from "./PostContent";
 
+import { getSettings } from "./App";
+
 export class AppContent extends React.PureComponent {
 
     public render() {
