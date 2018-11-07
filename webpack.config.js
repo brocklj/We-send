@@ -18,7 +18,7 @@ module.exports = {
     module: {
         rules: [
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
-            { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
+            { test: /\.tsx?$/, loader: "awesome-typescript-loader", exclude: /node_modules/ },
 
             // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
             { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
@@ -28,9 +28,9 @@ module.exports = {
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             title: 'Development',
-            template: __dirname + '/index.html',
+            //template: __dirname + '/index.html',
             inject: 'body',
-            filename: 'index.html',
+            //filename: 'index.html',
         })
     ],
     output: {

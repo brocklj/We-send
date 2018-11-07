@@ -1,5 +1,5 @@
 
-const settings = {
+export const getPages = {
     mainNav: [
         {
             component: "HomeContent", label: "Domu", path: "/",
@@ -22,4 +22,3 @@ const settings = {
     ],
     path: "/",
 };
-export default settings;
