@@ -7,10 +7,8 @@ import { NavBar } from "./Navbar";
 
 declare global {
     interface Window { appSettings: any; } // tslint:disable-line
+    const wpJson = "sds";
 }
-export const getSettings = () => {
-    return window.appSettings;
-};
 export interface IAppProps { compiler: string; framework: string; }
 
 export const App = (props: IAppProps) => (

@@ -16,7 +16,7 @@ Text Domain: we-send
 ?>
 <!doctype html>
 <html lang="cs">
-<link rel="stylesheet" href="./style.css" crossorigin="anonymous">
+<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/style.css" crossorigin="anonymous">
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -33,9 +33,19 @@ Text Domain: we-send
 </head>
 
 <body>
+  <?php 	$menu_name = 'primary';
+	$locations = get_nav_menu_locations();
+	$menu_id = $locations[ $menu_name ] ;
+	$primaty_nav = wp_get_nav_menu_items($menu_id); ?>
+  <?php
+    $custom_logo_id = get_theme_mod( 'custom_logo' );
+    $custom_logo_url = wp_get_attachment_image_url( $custom_logo_id , 'full' );
+  ?>
   <script>
     var appSettings = {
-      path: '<?php echo esc_url( get_home_url() ); ?>'
+      path: '<?php echo esc_url( get_home_url() ); ?>',
+      logo_src: '<?php echo esc_url($custom_logo_url) ?>',
+      nav_menu: <?php echo json_encode($primaty_nav)?>,
     };
   </script>
 

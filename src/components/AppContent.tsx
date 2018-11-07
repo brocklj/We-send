@@ -2,26 +2,28 @@ import * as React from "react";
 import { Col, Grid, Row } from "react-bootstrap";
 import { Route, Switch } from "react-router";
 import { BrowserRouter } from "react-router-dom";
-import settings from "./AppSettings";
+import { getPages } from "./APIv2";
+import { getRoute } from "./helpers";
 import { HomeContent } from "./HomeContent";
 import { PostContent } from "./PostContent";
-
-import { getSettings } from "./App";
 
 export class AppContent extends React.PureComponent {
 
     public render() {
+        const { nav_menu, path } = window.appSettings;
         const componentMap: any = {
-            HomeContent,
-            PostContent,
+            custom: HomeContent,
+            page: PostContent,
         };
         return (
             <BrowserRouter>
                 <Switch>
-                    {settings.mainNav.map(({ component, path }: { component: string, path: string }, i: number) =>
-                        (
-                            <Route exact path={path} key={i} component={componentMap[component]} />
-                        ),
+                    {nav_menu.map(({ object, url }: { url: string, object: string }, i: number) => {
+                        const route = getRoute(url, path);
+                        return (
+                            <Route exact path={route || "/"} key={i} component={componentMap[object]} />
+                        );
+                    },
                     )}
                 </Switch>
             </BrowserRouter>
