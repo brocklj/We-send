@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import { getPages } from "./APIv2";
 import { getRoute } from "./helpers";
 import { HomeContent } from "./HomeContent";
+import { PagesContent } from "./PagesContent";
 import { PostContent } from "./PostContent";
 
 export class AppContent extends React.PureComponent {
@@ -13,7 +14,7 @@ export class AppContent extends React.PureComponent {
         const { nav_menu, path } = window.appSettings;
         const componentMap: any = {
             custom: HomeContent,
-            page: PostContent,
+            page: PagesContent,
         };
         return (
             <BrowserRouter>
