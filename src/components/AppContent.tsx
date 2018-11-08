@@ -21,7 +21,7 @@ export class AppContent extends React.PureComponent {
                     {nav_menu.map(({ object, url }: { url: string, object: string }, i: number) => {
                         const route = getRoute(url, path);
                         return (
-                            <Route exact path={route || "/"} key={i} component={componentMap[object]} />
+                            <Route exact path={route} key={i} component={componentMap[object]} />
                         );
                     },
                     )}
