@@ -14,6 +14,9 @@ export class NavBar extends React.PureComponent {
                     .navbar-brand {
                         height: 8rem;
                     }
+                    .navbar {
+                        box-shadow: none;
+                    }
                 `}
                 </style>
                 <Navbar collapseOnSelect>
