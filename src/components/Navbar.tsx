@@ -21,7 +21,7 @@ export class NavBar extends React.PureComponent {
                         text-transform: uppercase;
                     }
                     .navbar-nav {
-                        padding: 1.6rem;
+                        padding: 1.6rem 0 1.6rem 0 ;
                     }
                 `}
                 </style>
