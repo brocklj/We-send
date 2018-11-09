@@ -49,7 +49,7 @@ Text Domain: we-send
     };
   </script>
 
-  <div id="app" class="container"></div>
+  <div id="app"></div>
   <script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/main.bundle.js"></script>
 
 </body>

@@ -12,13 +12,14 @@ export class Page extends React.PureComponent<IPageProps> {
         return (
             <Grid className="page">
                 <Row>
+
                     <NavBar />
+
                 </Row>
                 <Row>
-                    {children}
-                </Row>
-                <Row>
-                    <AppFooter />
+                    <Col xs={12}>
+                        {children}
+                    </Col>
                 </Row>
             </Grid>
         );

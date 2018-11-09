@@ -30,12 +30,11 @@ export class PagesContent extends React.PureComponent<IPageContentProps, IPageCo
 
         return (
             <Page>
-                <h1></h1>
                 {data.map((item: any, i: number) => {
                     return (
-                        <div>
+                        <div key={i}>
                             <h1>{item.title.rendered}</h1>
-                            <div key={i} dangerouslySetInnerHTML={{ __html: item.content.rendered }} />
+                            <div dangerouslySetInnerHTML={{ __html: item.content.rendered }} />
                         </div>
                     );
                 })}

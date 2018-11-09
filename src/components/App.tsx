@@ -13,7 +13,16 @@ export interface IAppProps { compiler: string; framework: string; }
 
 export const App = (props: IAppProps) => (
 
-    <AppContent />
-
-
+    <div className="app-content">
+        <style type="text/css">
+            {`
+                .app-content{
+                     position: relative;
+                     min-height: ${window.innerHeight}px;
+                }
+                `}
+        </style>
+        <AppContent />
+        <AppFooter />
+    </div>
 );
