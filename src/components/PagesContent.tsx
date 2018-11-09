@@ -10,7 +10,7 @@ export interface IPageContentState { data?: object[]; }
 
 export class PagesContent extends React.PureComponent<IPageContentProps, IPageContentState> {
     public state: IPageContentState = {
-        data: null,
+        data: [],
     };
     public constructor(props: IPageContentProps) {
         super(props);
@@ -28,17 +28,13 @@ export class PagesContent extends React.PureComponent<IPageContentProps, IPageCo
     public render() {
         const { data } = this.state;
 
-        if (data) {
-            return (
-                <Page>
-                    {data.map((item: any, i: number) => {
-                        return (<div key={i} dangerouslySetInnerHTML={{ __html: item.content.rendered }} />);
-                    })}
-                </Page>
-            );
-        } else {
-            return "";
-        }
+        return (
+            <Page>
+                {data.map((item: any, i: number) => {
+                    return (<div key={i} dangerouslySetInnerHTML={{ __html: item.content.rendered }} />);
+                })}
+            </Page>
+        );
     }
 }
 
