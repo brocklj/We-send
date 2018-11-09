@@ -11,8 +11,10 @@ export class NavBar extends React.PureComponent {
             <div>
                 <style type="text/css">
                     {`
-
-                 `}
+                    .navbar-brand {
+                        height: 8rem;
+                    }
+                `}
                 </style>
                 <Navbar collapseOnSelect>
                     <Navbar.Header>
@@ -26,8 +28,9 @@ export class NavBar extends React.PureComponent {
                     <Navbar.Collapse>
                         <Nav pullRight>
                             {nav_menu.map(({ title, url }: any, i: number) => (
-                                <li>
-                                    <Link to={getRoute(url, path)}>
+                                <li key={i}
+                                    className={window.location.pathname === getRoute(url, path) ? "active" : ""}>
+                                    <Link to={getRoute(url, path)} >
                                         {title}
                                     </Link>
                                 </li>
@@ -35,7 +38,7 @@ export class NavBar extends React.PureComponent {
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
-            </div>
+            </div >
         );
     }
 }
