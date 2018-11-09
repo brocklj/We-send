@@ -12,10 +12,16 @@ export class NavBar extends React.PureComponent {
                 <style type="text/css">
                     {`
                     .navbar-brand {
-                        height: 8rem;
+                        height: 10rem;
                     }
                     .navbar {
                         box-shadow: none;
+                    }
+                    .navbar a {
+                        text-transform: uppercase;
+                    }
+                    .navbar-nav {
+                        padding: 1.6rem;
                     }
                 `}
                 </style>
