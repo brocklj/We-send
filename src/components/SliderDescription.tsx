@@ -8,7 +8,7 @@ export class SliderDescription extends React.PureComponent {
         return (
             <Row>
                 <Col xs={6} md={6}>
-                    <Panel bsStyle="slider-description">
+                    <Panel>
                         <Panel.Heading>
                         </Panel.Heading>
                         <Panel.Body>Panel content</Panel.Body>
