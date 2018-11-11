@@ -1,6 +1,7 @@
 // http://localhost/wp-json/wp/v2/pages?slug=sample-page
 import * as React from "react";
 import { Col, Grid, Row } from "react-bootstrap";
+import { LoadingSpinner } from "./LoadingSpinner";
 import { NavBar } from "./Navbar";
 import { Page } from "./Page";
 import { Slider } from "./Slider";
@@ -10,7 +11,7 @@ export interface IPageContentState { data?: object[]; }
 
 export class PagesContent extends React.PureComponent<IPageContentProps, IPageContentState> {
     public state: IPageContentState = {
-        data: [],
+        data: null,
     };
     public constructor(props: IPageContentProps) {
         super(props);
@@ -19,7 +20,7 @@ export class PagesContent extends React.PureComponent<IPageContentProps, IPageCo
     public componentDidMount() {
         const path = window.appSettings.path;
         const slug = this.props.location.pathname.replace("/", "");
-        fetch(path + "/wp-json/wp/v2/pages?slug=" + slug)
+        fetch(path + "/wp-json/wp/v2/pages?" + (slug ? ("slug=" + slug) : ""))
             .catch()
             .then((res: Response) => res.json())
             .then((data) => this.setState({ data }));
@@ -27,7 +28,13 @@ export class PagesContent extends React.PureComponent<IPageContentProps, IPageCo
 
     public render() {
         const { data } = this.state;
-
+        if (data === null) {
+            return (
+                <Page>
+                    <LoadingSpinner />
+                </Page>
+            );
+        }
         return (
             <Page>
                 {data.map((item: any, i: number) => {
