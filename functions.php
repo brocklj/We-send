@@ -26,3 +26,20 @@ add_action( 'rest_api_init', function () {
         'callback' => 'get_menu',
     ) );
 } );
+
+// Register We-send theme widgets
+function wesend_register_widgets() {
+
+	register_sidebar( array(
+	'name' => __( 'Footer bar', 'wpmu' ),
+	'id' => 'footer_bar',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget' => '</div>',
+	'before_title' => '<h3 class="footer-header">',
+	'after_title' => '</h3>'
+));
+
+}
+add_action( 'widgets_init', 'wesend_register_widgets' );
+
+add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
