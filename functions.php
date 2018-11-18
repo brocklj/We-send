@@ -10,6 +10,7 @@ add_theme_support( 'custom-logo', array(
 	// This theme uses wp_nav_menu().
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'We-send' ),
+		'secondary' => __( 'Secondary Menu', 'We-send' ),
 	) );
 
 	function get_menu() {
@@ -31,7 +32,7 @@ add_action( 'rest_api_init', function () {
 function wesend_register_widgets() {
 
 	register_sidebar( array(
-		'name' => __( 'Footer bar', 'we-send' ),
+		'name' => __( 'Footer Bar', 'we-send' ),
 		'id' => 'footer_bar',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
@@ -40,11 +41,11 @@ function wesend_register_widgets() {
 	));
 
 	register_sidebar( array(
-		'name' => __( 'Home page greeting panel', 'we-send' ),
+		'name' => __( 'Home Page Greeting Panel', 'we-send' ),
 		'id' => 'home_greet_panel',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h3 class="footer-header">',
+		'before_title' => '<h3 class="greeting-header">',
 		'after_title' => '</h3>'
 	));
 
