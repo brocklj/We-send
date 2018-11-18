@@ -16,6 +16,7 @@ export class NavBar extends React.PureComponent {
                     }
                     .navbar {
                         box-shadow: none;
+                        margin-bottom: 0;
                     }
                     .navbar a {
                         text-transform: uppercase;
