@@ -1,9 +1,17 @@
 import * as React from "react";
 
 export class LoadingSpinner extends React.PureComponent {
+    public state = {
+        show: false,
+    };
+    public componentDidMount() {
+        setTimeout(() => {
+            this.setState({ show: true });
+        }, 200);
 
+    }
     public render() {
-
+        if (!this.state.show) { return ""; }
         return (
             <div>
                 <style type="text/css">
