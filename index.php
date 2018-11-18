@@ -45,7 +45,7 @@ Text Domain: we-send
       logo_src: '<?php echo esc_url($custom_logo_url) ?>',
       nav_menu: <?php echo json_encode($primaty_nav)?>,
       widgets: <?php echo json_encode(get_option('sidebars_widgets')) ?>,
-      widget_text: <?php echo json_encode(get_option('widget_text')) ?>
+      widgets_text: <?php echo json_encode(get_option('widget_text')) ?>,      
     };
   </script>
 

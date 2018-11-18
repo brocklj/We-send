@@ -12,7 +12,6 @@ export class Slider extends React.PureComponent {
                 <style type="text/css">
                     {`
                     .slider {
-                        background-image: url("https://d39-a.sdn.szn.cz/d_39/c_img_F_N/wYsWL.jpeg?fl=cro,185,46,1699,955|res,450,,3|jpg,80");
                         color: white;
                     }
                     `}

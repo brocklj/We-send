@@ -1,10 +1,12 @@
 import * as React from "react";
 import { Col, Grid, Row } from "react-bootstrap";
 import { Container } from "react-bootstrap/lib/Tab";
+import { getWidgetContent } from "./helpers";
 
 export class AppFooter extends React.PureComponent {
 
     public render() {
+        const footerBarContent: object[] = (getWidgetContent("footer_bar", window.appSettings));
 
         return (
             <div className="footer">
@@ -23,8 +25,13 @@ export class AppFooter extends React.PureComponent {
                 </style>
                 <div>
                     <div className="container">
-                        footer 22
-                     </div>
+                        {footerBarContent.map((i: any) => (
+                            <div>
+                                <h3>{i.title}</h3>
+                                <div dangerouslySetInnerHTML={{ __html: i.text }} />
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         );
