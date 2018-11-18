@@ -31,13 +31,22 @@ add_action( 'rest_api_init', function () {
 function wesend_register_widgets() {
 
 	register_sidebar( array(
-	'name' => __( 'Footer bar', 'wpmu' ),
-	'id' => 'footer_bar',
-	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-	'after_widget' => '</div>',
-	'before_title' => '<h3 class="footer-header">',
-	'after_title' => '</h3>'
-));
+		'name' => __( 'Footer bar', 'we-send' ),
+		'id' => 'footer_bar',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="footer-header">',
+		'after_title' => '</h3>'
+	));
+
+	register_sidebar( array(
+		'name' => __( 'Home page greeting panel', 'we-send' ),
+		'id' => 'home_greet_panel',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="footer-header">',
+		'after_title' => '</h3>'
+	));
 
 }
 add_action( 'widgets_init', 'wesend_register_widgets' );
