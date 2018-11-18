@@ -11,7 +11,12 @@ export class SliderPosts extends React.PureComponent {
                 <style type="text/css">
                     {`
                     .home-sliderpost-panel {
-                        background-color: rgba(0, 0, 0, 0.46);
+                        background-color: rgba(0, 0, 0, 0.70);
+                    }
+                    .home-sliderpost-panel  .panel-body h2 {
+                        margin-top: 0;
+                        font-size: 3rem;
+                         color: #fff;
                     }
                     .home-sliderpost-panel:nth-of-type(1) {
 
@@ -32,7 +37,14 @@ export class SliderPosts extends React.PureComponent {
                         if (i < 1) { return ""; }
                         return (
                             <Panel className="home-sliderpost-panel">
-                                <Panel.Body >{panel ? (<div dangerouslySetInnerHTML={{ __html: panel.text }} />) : ("")}</Panel.Body>
+                                <Panel.Body >{panel ? (
+                                    <div>
+                                        <h2>{panel.title}</h2>
+                                        <div dangerouslySetInnerHTML={{ __html: panel.text }} />
+                                    </div>
+                                )
+                                    : ("")}
+                                </Panel.Body>
                             </Panel>
                         );
                     })}
@@ -42,3 +54,9 @@ export class SliderPosts extends React.PureComponent {
 
     }
 }
+
+
+
+
+
+
