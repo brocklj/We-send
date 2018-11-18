@@ -20,6 +20,10 @@ export class AppFooter extends React.PureComponent {
                         left: 0;
                         color: #fff;
                         bottom: 0;
+                        text-align: center;
+                    }
+                    .footer ul {
+                         list-style: none;
                     }
                 `}
                 </style>
