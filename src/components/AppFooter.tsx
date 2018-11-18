@@ -25,12 +25,16 @@ export class AppFooter extends React.PureComponent {
                 </style>
                 <div>
                     <div className="container">
-                        {footerBarContent.map((i: any) => (
-                            <div>
-                                <h3>{i.title}</h3>
-                                <div dangerouslySetInnerHTML={{ __html: i.text }} />
-                            </div>
-                        ))}
+                        <Grid>
+                            <Row>
+                                {footerBarContent.map((widget: any) => (
+                                    <Col sm={12 / footerBarContent.length} >
+                                        <h3>{widget.title}</h3>
+                                        <div dangerouslySetInnerHTML={{ __html: widget.text }} />
+                                    </Col>
+                                ))}
+                            </Row>
+                        </Grid>
                     </div>
                 </div>
             </div>
